@@ -2,8 +2,8 @@
 
 Todo:
 
-- Validierungen einfügen
-- Stylesheet einfügen
+- Validierungen dem User anzeigen lassen.
+- Stylesheet verbessern.
 
 */
 
@@ -55,11 +55,34 @@ let ibanController = (function() {
 // ============================================================================================
 
 let UIController = (function() {
+
+  const DOMkto = document.getElementById('input-kontonummer');
+  const DOMblz = document.getElementById("input-bankleitzahl");
+
+
   return {
+
+    validateInput: function() {
+
+      let ktoErrors = DOMkto.validity;
+      let blzErrors = DOMblz.validity;
+
+      if (!ktoErrors.valid || !blzErrors.valid)  {
+        console.log(DOMkto.validationMessage); //Fehler log in der Console.
+        console.log(DOMblz.validationMessage); //User Anzeige noch Implementieren.
+
+        return false;
+
+      }else {
+        return true;
+      }
+
+    },
+
     getInput: function() {
       return {
-        ktonr: document.getElementById("input-kontonummer").value,
-        blz: document.getElementById("input-bankleitzahl").value
+        ktonr: DOMkto.value,
+        blz: DOMblz.value
       };
     },
 
@@ -80,6 +103,7 @@ let globalController = (function(ibanCtrl, UICtrl) {
   };
 
   const calculateIban = function() {
+    if (UICtrl.validateInput()) {
     let customersDetails = UICtrl.getInput();
 
     let calculatedIBAN = ibanCtrl.calculateIban(
@@ -88,6 +112,7 @@ let globalController = (function(ibanCtrl, UICtrl) {
     );
 
     UICtrl.displayIBAN(calculatedIBAN);
+  }
   };
 
   return {

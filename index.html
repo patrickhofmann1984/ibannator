@@ -6,33 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
-    <title>Ibanator</title>
-    
-    <style type="text/css">
-        body, html {
-            height: 100%;
-        }
+    <link rel="stylesheet" href="app.css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,600,700" rel="stylesheet">
+
+    <title>Ibanator - Dein super simpler IBAN-Rechner</title>
         
     </style>
 </head>
 <body>
+
     
-    <section id="section-main" class="d-flex justify-content-center align-items-center h-100">
-        <div class="card" style="width: 300px;">
+    
+    <section id="section-main" class="d-flex flex-column justify-content-center align-items-center h-100">
+            <img src="img/icon-questionmark.svg" alt="Questionmark Icon" id="icon-questionmark">
+        <div class="logo">IBAN<span class="logo-bld">NATOR.</span></div>
+        <div id="main-card" class="card">
             <div class="card-body">
                 <div id="form-main">
                     <p id="p-ergebnis">Platzhalter</p>
                     <div class="form-group">
-                        <input type="text" name="" placeholder="Kontonummer" id="input-kontonummer" class="form-control" required>
+                        <input type="text" name="" placeholder="Kontonummer" maxlength="10" minlength="8" pattern="[0-9]{8,10}" id="input-kontonummer" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="" placeholder="Bankleitzahl" id="input-bankleitzahl" class="form-control">
+                        <input type="text" name="" placeholder="Bankleitzahl" maxlength="10" minlength="8" pattern="[0-9]{8,10}" id="input-bankleitzahl" class="form-control" required>
                     </div>
-                    <button id="btn-berechnen" class="btn btn-primary">Berechnen</button>
                 </div>
             </div>
         </div>
+        <a href="#"><img src="img/icon-ok.svg" alt="Berechnen Button" id="btn-berechnen"></a>
+        <img src="img/logo-sepa.svg" alt="SEPA Logo" id="logo-sepa">
         
         
         

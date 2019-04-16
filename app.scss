@@ -1,0 +1,45 @@
+
+$marginToForm: 50px;
+
+body, html {
+    height: 100%;
+    font-family: 'Comfortaa', cursive;
+}
+
+
+
+#section-main {
+    background: url(img/image-background.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+#icon-questionmark {
+    position: absolute;
+    top: 45px;
+    right: 45px;
+}
+
+.logo {
+    color: #FFF;
+    font-size: 4.5rem;
+    font-weight: 300;
+    letter-spacing: 16px;
+    margin-bottom: $marginToForm;
+    span.logo-bld {
+        font-weight: 500;
+    }
+}
+
+#main-card {
+    width: 300px;
+}
+
+#btn-berechnen {
+    margin-top: $marginToForm;
+}
+
+#logo-sepa {
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+}
