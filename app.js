@@ -83,8 +83,8 @@ let globalController = (function(ibanCtrl, UICtrl) {
     let customersDetails = UICtrl.getInput();
 
     let calculatedIBAN = ibanCtrl.calculateIban(
-      customersDetails.ktonr,
-      customersDetails.blz
+      customersDetails.blz,
+      customersDetails.ktonr
     );
 
     UICtrl.displayIBAN(calculatedIBAN);
